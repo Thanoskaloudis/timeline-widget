@@ -9,3 +9,18 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+model TimeLine {
+  id     String      @id @default(auto()) @map("_id") @db.ObjectId
+  Points Milestone[]
+  color  String
+}
+
+model Milestone {
+  id     String      @id @default(auto()) @map("_id") @db.ObjectId
+  checked    Boolean   @default(false)
+  text       String
+  color      String
+  post    TimeLine   @relation(fields: [timeLineId], references: [id])
+  timeLineId  String @db.ObjectId
+}
