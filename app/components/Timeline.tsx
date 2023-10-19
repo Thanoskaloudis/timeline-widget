@@ -4,7 +4,7 @@ import { IMilestone, ITimelinesProps } from '../utils/models';
 export const Timeline = ({timeline}: ITimelinesProps) => {
   return (
     <div className="w-full bg-white rounded-lg shadow-lg p-7 m-5 transition-opacity opacity-100 duration-300">
-      <ol className="items-center sm:flex">
+      <ol className="items-center sm:flex justify-evenly">
       {timeline.points.map((point: IMilestone) => (
         <li key={point.id} className="relative mb-6 sm:mb-0">
         <div className="flex items-center">
@@ -23,7 +23,7 @@ export const Timeline = ({timeline}: ITimelinesProps) => {
         </div>
         <div className="mt-3 sm:pr-8">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            {point.id}
+            {point.date.toLocaleDateString()}
           </h3>
           <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             {point.text}

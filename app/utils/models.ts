@@ -13,6 +13,7 @@ export interface IMilestone {
   checked: boolean;
   text: string;
   color: string;
+  date: Date;
   timelineId: string;
 }
 

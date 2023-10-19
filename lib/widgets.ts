@@ -21,17 +21,20 @@ export async function createTimeline() {
         data: [{
           checked: false,
           text: "lorem ipsum",
-          color: "#f25b50"
+          color: "#f25b50",
+          date: new Date('2023-01-15T12:00:00Z'),
         },
         {
           checked: false,
           text: "lorem ipsum",
-          color: "#f25b50"
+          color: "#f25b50",
+          date: new Date('2023-05-15T12:00:00Z'),
         },
         {
           checked: false,
           text: "lorem ipsum",
-          color: "#f25b50"
+          color: "#f25b50",
+          date: new Date('2023-09-15T12:00:00Z'),
         }]
       },
     }}})

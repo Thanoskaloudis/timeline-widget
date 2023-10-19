@@ -15,6 +15,7 @@ model Milestone {
   checked Boolean @default(false)
   text String
   color String
+  date  DateTime
   timeline Timeline @relation(fields: [timelineId], references: [id])
   timelineId String @db.ObjectId
 }
