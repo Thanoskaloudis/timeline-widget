@@ -43,3 +43,19 @@ export async function createTimeline() {
     return { error }
   }
 }
+
+export async function updateTimeline(milestoneId: string, checked: boolean) {
+  try {
+    const checkMilestone = await prisma.milestone.update({
+      where: {
+        id: milestoneId, 
+      },
+      data: {
+        checked: checked, 
+      },
+    });
+    return { checkMilestone }
+  } catch (error) {
+    return { error }
+  }
+}
