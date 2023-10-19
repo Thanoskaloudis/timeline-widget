@@ -10,17 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model TimeLine {
-  id     String      @id @default(auto()) @map("_id") @db.ObjectId
-  Points Milestone[]
-  color  String
+model Milestone {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  checked Boolean @default(false)
+  text String
+  color String
+  timeline Timeline @relation(fields: [timelineId], references: [id])
+  timelineId String @db.ObjectId
 }
 
-model Milestone {
-  id     String      @id @default(auto()) @map("_id") @db.ObjectId
-  checked    Boolean   @default(false)
-  text       String
-  color      String
-  post    TimeLine   @relation(fields: [timeLineId], references: [id])
-  timeLineId  String @db.ObjectId
+model Timeline {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  points Milestone[]
+  color String
 }
