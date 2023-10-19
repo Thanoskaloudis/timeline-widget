@@ -1,6 +1,18 @@
-import { Timeline } from "@prisma/client";
-
 export interface ITimelinesProps {
-  timelines: Timeline
+  timeline: ITimelines;
+}
+
+export interface ITimelines {
+  id: String
+  points: IMilestone[]
+  color: String
+}
+
+export interface IMilestone {
+  id: string;
+  checked: boolean;
+  text: string;
+  color: string;
+  timelineId: string;
 }
 
