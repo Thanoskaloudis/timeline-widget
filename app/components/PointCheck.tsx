@@ -8,7 +8,7 @@ export const PointCheck = ({ point } :IMilestoneProps) => {
 
   const checkTimelinePoint = (id: string, checked: boolean) => {
     startTransition(()=> {
-      updateTimelineAction(id, !checked);
+      updateTimelineAction(id, { checked: !checked });
     })
   };
   

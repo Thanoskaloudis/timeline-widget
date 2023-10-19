@@ -1,5 +1,7 @@
 import { IMilestone,ITimelinesProps } from '../utils/models';
 import { PointCheck } from './PointCheck';
+import { PointDate } from './PointDate';
+import { PointDescription } from './PointDescription';
 
 export const Timeline = ({ timeline }: ITimelinesProps) => {
   return (
@@ -8,13 +10,9 @@ export const Timeline = ({ timeline }: ITimelinesProps) => {
         {timeline.points.map((point: IMilestone) => (
           <li key={point.id} className="relative mb-6 sm:mb-0">
             <div className="mt-3 w-40">
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-500 dark:text-gray-500">
-                {point.date.toLocaleDateString()}
-              </time>
+              <PointDate point={point}/>
               <PointCheck point={point}/>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                {point.text}
-              </h3>
+              <PointDescription point={point}/>
             </div>
           </li>
         ))}
