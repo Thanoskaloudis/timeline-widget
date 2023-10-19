@@ -80,3 +80,24 @@ export async function addNewTimelinePoint(timelineId: string) {
     throw error;
   }
 }
+
+export async function deleteTimelineById(timelineId: string) {
+  try {
+    await prisma.milestone.deleteMany({
+      where: {
+        timelineId: timelineId,
+      }
+    });
+
+    const deletedTimeline = await prisma.timeline.delete({
+      where: {
+        id: timelineId,
+      },
+    });
+
+    console.log('Timeline deleted:', deletedTimeline);
+  } catch (error) {
+    console.error('Error deleting timeline:', error);
+    throw error;
+  }
+}

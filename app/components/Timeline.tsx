@@ -6,7 +6,7 @@ import { PointDescription } from './PointDescription';
 
 export const Timeline = ({ timeline }: ITimelinesProps) => {
   return (
-    <div className="w-full bg-white rounded-lg shadow-lg p-7 m-5 transition-opacity opacity-100 duration-300">
+    <div className="w-fit bg-white rounded-lg shadow-lg p-7 m-5 transition-opacity opacity-100 duration-300">
       <ol className="items-center sm:flex">
         {timeline.points.map((point: IMilestone) => (
           <li

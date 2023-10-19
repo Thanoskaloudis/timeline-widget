@@ -13,7 +13,6 @@ export const PointDescription = ({ point } :IMilestoneProps) => {
   };
 
   const handleInputBlur = () => {
-    console.log(editedText);
     updateTimelineAction(point.id, { text: editedText});
     setIsEditing(false);
   };
