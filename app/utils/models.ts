@@ -1,5 +1,10 @@
+
 export interface ITimelinesProps {
   timeline: ITimelines;
+}
+
+export interface IMilestoneProps {
+  point: IMilestone;
 }
 
 export interface ITimelines {
@@ -15,5 +20,12 @@ export interface IMilestone {
   color: string;
   date: Date;
   timelineId: string;
+}
+
+export interface IUpdateFields {
+  text?: string;
+  color?: string;
+  date?: Date;
+  checked?: boolean;
 }
 

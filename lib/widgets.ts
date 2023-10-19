@@ -1,3 +1,4 @@
+import { IMilestone, IUpdateFields } from '@/app/utils/models';
 import prisma from './prisma';
 
 export async function getTimelines() {
@@ -44,15 +45,13 @@ export async function createTimeline() {
   }
 }
 
-export async function updateTimeline(milestoneId: string, checked: boolean) {
+export async function updateTimeline(milestoneId: string, updatedFields: IUpdateFields) {
   try {
     const checkMilestone = await prisma.milestone.update({
       where: {
         id: milestoneId, 
       },
-      data: {
-        checked: checked, 
-      },
+      data: updatedFields as IMilestone,
     });
     return { checkMilestone }
   } catch (error) {

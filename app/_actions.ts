@@ -9,6 +9,7 @@ export async function createTimelineAction() {
 }
 
 export async function updateTimelineAction(id: string, checked: boolean) {
-  await updateTimeline(id, checked);
+  const updatedFields = { checked: checked}
+  await updateTimeline(id, updatedFields);
   revalidatePath('/');
 }
