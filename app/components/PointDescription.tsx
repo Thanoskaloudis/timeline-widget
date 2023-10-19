@@ -33,7 +33,7 @@ export const PointDescription = ({ point } :IMilestoneProps) => {
       ) : (
         <input
           type="text"
-          className="block mt-4 text-sm font-normal leading-none text-gray-600 dark:text-gray-500"
+          className="block mt-4 font-semibold text-gray-600 dark:text-gray-500"
           value={editedText}
           onChange={handleInputChange}
           onBlur={handleInputBlur}

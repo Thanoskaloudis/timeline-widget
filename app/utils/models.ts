@@ -7,9 +7,9 @@ export interface IMilestoneProps {
 }
 
 export interface ITimelines {
-  id: String
+  id: string
   points: IMilestone[]
-  color: String
+  color: string
 }
 
 export interface IMilestone {

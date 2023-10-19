@@ -58,3 +58,25 @@ export async function updateTimeline(milestoneId: string, updatedFields: IUpdate
     return { error }
   }
 }
+
+export async function addNewTimelinePoint(timelineId: string) {
+  try {
+    const newMilestone = await prisma.milestone.create({
+      data: {
+        ... {
+          checked: false,
+          text: "lorem ipsum",
+          color: "#f25b50",
+          date: new Date('2023-05-15T12:00:00Z'),
+        },
+        timeline: { connect: { id: timelineId } }, 
+      },
+    });
+
+    console.log('New Milestone created:', newMilestone);
+    return newMilestone;
+  } catch (error) {
+    console.error('Error creating milestone:', error);
+    throw error;
+  }
+}
